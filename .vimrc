@@ -1,6 +1,10 @@
 set nocompatible
 execute pathogen#infect()
 filetype off
+set fileformats=unix,dos
+set fileformat=unix
+set encoding=utf-8
+set fileencodings=utf-8
 set laststatus=2
 syntax enable
 filetype plugin indent on
