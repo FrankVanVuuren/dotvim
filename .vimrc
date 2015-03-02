@@ -20,6 +20,11 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 set backspace=indent,eol,start
+
+" custom keymaps
+nmap s <Plug>(easymotion-s2)
+
+" lightline configuration
 let g:lightline = {
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
@@ -36,7 +41,10 @@ let g:lightline = {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
   \ },
   \ }
+
+" edit gvim to be minimalistic
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
+

@@ -28,3 +28,6 @@
 [submodule "bundle/auto-pairs"]
 	path = bundle/auto-pairs
 	url = git://github.com/jiangmiao/auto-pairs.git
+[submodule "bundle/vim-easymotion"]
+	path = bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion
