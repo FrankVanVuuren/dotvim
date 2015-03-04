@@ -22,7 +22,9 @@ set softtabstop=2
 set backspace=indent,eol,start
 
 " custom keymaps
-nmap s <Plug>(easymotion-s2)
+noremap s <Plug>(easymotion-s2)
+noremap <C-V> "+gP
+
 
 " lightline configuration
 let g:lightline = {
