@@ -23,7 +23,7 @@ set backspace=indent,eol,start
 
 " custom keymaps
 noremap s <Plug>(easymotion-s2)
-noremap <C-V> "+gP
+noremap <C-S-V> "+gP
 
 
 " lightline configuration
