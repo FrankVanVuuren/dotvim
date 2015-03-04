@@ -22,7 +22,7 @@ set softtabstop=2
 set backspace=indent,eol,start
 
 " custom keymaps
-noremap s <Plug>(easymotion-s2)
+nmap s <Plug>(easymotion-s)
 noremap <C-S-V> "+gP
 
 
