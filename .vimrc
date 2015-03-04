@@ -1,6 +1,10 @@
 set nocompatible
 execute pathogen#infect()
 filetype off
+set fileformats=unix,dos
+set fileformat=unix
+set encoding=utf-8
+set fileencodings=utf-8
 set laststatus=2
 syntax enable
 filetype plugin indent on
@@ -15,6 +19,14 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
+set backspace=indent,eol,start
+
+" custom keymaps
+noremap s <Plug>(easymotion-s2)
+noremap <C-V> "+gP
+
+
+" lightline configuration
 let g:lightline = {
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
@@ -31,3 +43,10 @@ let g:lightline = {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
   \ },
   \ }
+
+" edit gvim to be minimalistic
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+

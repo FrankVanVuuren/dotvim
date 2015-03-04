@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/frank/Products/CoffeePirates'
-let g:netrw_dirhist_2='/home/frank/Products/CoffeePirates/client'
-let g:netrw_dirhist_3='/home/frank/Projects/cpp-trowaway'
-let g:netrw_dirhist_4='/home/frank/.vim'
-let g:netrw_dirhist_5='/home/frank/.vim/bundle'
-let g:netrw_dirhist_6='/home/frank/.vim'
