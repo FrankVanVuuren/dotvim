@@ -37,3 +37,6 @@
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
 	url = git@github.com:terryma/vim-multiple-cursors.git
+[submodule "bundle/vim-gotham"]
+	path = bundle/vim-gotham
+	url = git@github.com:whatyouhide/vim-gotham.git
