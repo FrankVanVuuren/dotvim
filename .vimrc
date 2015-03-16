@@ -24,6 +24,7 @@ set backspace=indent,eol,start
 " custom keymaps
 nmap s <Plug>(easymotion-s)
 noremap <C-S-V> "+gP
+noremap <C-k><C-b> :NERDTreeToggle<CR>
 
 
 " lightline configuration
