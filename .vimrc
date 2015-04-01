@@ -9,6 +9,7 @@ set laststatus=2
 syntax enable
 filetype plugin indent on
 set t_Co=256
+set t_ut=
 set bg="dark"
 colorscheme gotham256
 set nowrap
