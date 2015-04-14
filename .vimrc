@@ -10,7 +10,7 @@ syntax enable
 filetype plugin indent on
 set t_Co=256
 set bg="dark"
-colorscheme Tomorrow-Night-Eighties
+colorscheme gotham256
 set nowrap
 set number
 syntax on
