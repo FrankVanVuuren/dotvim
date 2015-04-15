@@ -9,7 +9,6 @@ set laststatus=2
 syntax enable
 filetype plugin indent on
 set t_Co=256
-set t_ut=
 set bg="dark"
 colorscheme gotham256
 set nowrap
@@ -26,7 +25,12 @@ set backspace=indent,eol,start
 nmap s <Plug>(easymotion-s)
 noremap <C-S-V> "+gP
 noremap <C-k><C-b> :NERDTreeToggle<CR>
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
 
+
+" ctrlp configuration
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " lightline configuration
 let g:lightline = {
