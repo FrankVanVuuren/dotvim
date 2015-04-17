@@ -34,6 +34,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " lightline configuration
 let g:lightline = {
+  \ 'colorscheme': 'gotham256',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
@@ -55,4 +56,3 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
-
