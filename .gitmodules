@@ -40,9 +40,6 @@
 [submodule "bundle/vim-gotham"]
 	path = bundle/vim-gotham
 	url = git@github.com:whatyouhide/vim-gotham.git
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/base16-vim"]
 	path = bundle/base16-vim
 	url = https://github.com/chriskempson/base16-vim.git
