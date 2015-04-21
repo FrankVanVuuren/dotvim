@@ -28,6 +28,8 @@ noremap <C-k><C-b> :NERDTreeToggle<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 
+" syntastic configuration
+let g:syntastic_javascript_checkers = ['jsxhint']
 
 " ctrlp configuration
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
