@@ -55,6 +55,7 @@ let g:lightline = {
 
 " edit gvim to be minimalistic
 set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
+set guioptions-=T  "remove tool bar
 set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=e  "remove tab bar
 set guioptions-=L  "remove left-hand scroll bar
