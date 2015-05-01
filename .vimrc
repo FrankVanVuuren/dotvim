@@ -21,6 +21,12 @@ set expandtab
 set softtabstop=2
 set backspace=indent,eol,start
 
+" windows only
+if has("win32")
+  set swapfile
+  set dir=%TEMP%\
+endif
+
 " custom keymaps
 nmap s <Plug>(easymotion-s)
 noremap <C-S-V> "+gP
@@ -58,3 +64,4 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
+set guioptions-=e  "remove tab-pages
