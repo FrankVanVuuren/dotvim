@@ -8,9 +8,8 @@ set fileencodings=utf-8
 set laststatus=2
 syntax enable
 filetype plugin indent on
-set t_Co=256
 set bg="dark"
-colorscheme gotham256
+colorscheme gotham
 set nowrap
 set number
 syntax on
@@ -33,6 +32,9 @@ noremap <C-S-V> "+gP
 noremap <C-k><C-b> :NERDTreeToggle<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
+tnoremap <Esc> <C-\><C-n>
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
 
 " syntastic configuration
 let g:syntastic_javascript_checkers = ['jsxhint']
@@ -42,9 +44,9 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " lightline configuration
 let g:lightline = {
-  \ 'colorscheme': 'gotham256',
+  \ 'colorscheme': 'gotham',
   \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
+  \   'left': [ [ 'mode'],
   \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
   \ },
   \ 'component': {
