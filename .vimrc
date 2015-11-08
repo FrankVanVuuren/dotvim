@@ -32,7 +32,7 @@ noremap <C-S-V> "+gP
 noremap <C-k><C-b> :NERDTreeToggle<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 
