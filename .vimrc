@@ -42,6 +42,9 @@ let g:syntastic_javascript_checkers = ['jsxhint']
 " ctrlp configuration
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
+" rainbow configuration
+let g:rainbow_active = 1
+
 " lightline configuration
 let g:lightline = {
   \ 'colorscheme': 'gotham',
