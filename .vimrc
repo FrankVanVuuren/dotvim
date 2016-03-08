@@ -1,13 +1,28 @@
+" No backsies
 set nocompatible
-execute pathogen#infect()
-filetype off
-set fileformats=unix,dos
-set fileformat=unix
+
+" Every Vim on every OS will look in .vim
+set runtimepath+=$HOME/.vim
+
+" Defined plugin location and plugins
+call plug#begin('~/.vim/bundle')
+Plug 'whatyouhide/vim-gotham'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'luochen1990/rainbow'
+call plug#end()
+
+" stuff
 set encoding=utf-8
 set fileencodings=utf-8
-set laststatus=2
-syntax enable
-filetype plugin indent on
 set bg="dark"
 colorscheme gotham
 set nowrap
@@ -18,13 +33,12 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
-set backspace=indent,eol,start
 set showcmd
 
 " highlight current line
 au WinLeave * set nocursorline
 au WinEnter * set cursorline
-set cursorline cursorcolumn
+set cursorline
 
 " space is my leader
 let mapleader = " "
@@ -80,9 +94,9 @@ let g:lightline = {
   \ },
   \ }
 
+" gui settings
 if has('gui_running')
-  set guifont=Monoid:h9
-  " edit gvim to be minimalistic
+  set guifont=Hasklig:h10
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove tool bar
   set guioptions-=r  "remove right-hand scroll bar
