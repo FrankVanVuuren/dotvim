@@ -21,6 +21,11 @@ set softtabstop=2
 set backspace=indent,eol,start
 set showcmd
 
+" highlight current line
+au WinLeave * set nocursorline
+au WinEnter * set cursorline
+set cursorline cursorcolumn
+
 " space is my leader
 let mapleader = " "
 
