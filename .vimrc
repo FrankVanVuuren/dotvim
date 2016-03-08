@@ -48,6 +48,7 @@ set noswapfile
 set nobackup
 
 " custom keymaps
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 nmap <leader><leader> <Plug>(easymotion-s)
 nmap <leader>w <C-W>
 nmap <leader>h <<
