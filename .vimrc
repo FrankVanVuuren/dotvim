@@ -25,7 +25,7 @@ call plug#end()
 set encoding=utf-8
 set fileencodings=utf-8
 set bg="dark"
-colorscheme gotham
+colorscheme gotham256
 set nowrap
 set number
 syntax on
@@ -82,7 +82,7 @@ let g:rainbow_active = 1
 
 " lightline configuration
 let g:lightline = {
-  \ 'colorscheme': 'gotham',
+  \ 'colorscheme': 'gotham256',
   \ 'active': {
   \   'left': [ [ 'mode'],
   \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
