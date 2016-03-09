@@ -49,7 +49,7 @@ set nobackup
 
 " custom keymaps
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-nmap <leader><leader> <Plug>(easymotion-s)
+nmap <leader><Space> <Plug>(easymotion-s)
 nmap <leader>w <C-W>
 nmap <leader>h <<
   vmap <leader>h <
@@ -97,7 +97,8 @@ let g:lightline = {
 
 " gui settings
 if has('gui_running')
-  set guifont=Hasklig:h10
+  set guifont=Ubuntu\ Mono
+  
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove tool bar
   set guioptions-=r  "remove right-hand scroll bar
