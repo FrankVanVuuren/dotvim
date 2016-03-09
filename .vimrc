@@ -14,6 +14,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
@@ -49,19 +50,22 @@ set nobackup
 
 " custom keymaps
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-nmap <leader><Space> <Plug>(easymotion-s)
+nmap <leader><leader> <Plug>(easymotion-s)
 nmap <leader>w <C-W>
 nmap <leader>h <<
-  vmap <leader>h <
-  nmap <leader>j <C-D>
+vmap <leader>h <
+nmap <leader>j <C-D>
 nmap <leader>l >>
 vmap <leader>l >
 nmap <leader>k <C-U>
 nmap <leader>p "*p
 nmap <leader>P "*P
 nmap <leader>y "*y
-noremap <leader>rr :source $MYVIMRC<CR>
-noremap <leader>tn :NERDTreeToggle<CR>
+nmap <leader>q :q<CR>
+nmap <leader>rc :tabe ~/.vimrc<CR>
+nmap <leader>rr :source $MYVIMRC<CR>
+nmap <leader>ri :PlugInstall<CR>
+nmap <leader>tn :NERDTreeToggle<CR>
 nnoremap <A-j> :m .+1<CR>==
 vnoremap <A-j> :m .+1<CR>==
 vnoremap <A-j> :m '>+1<CR>gv=gv
