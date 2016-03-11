@@ -7,6 +7,7 @@ set runtimepath+=$HOME/.vim
 " Defined plugin location and plugins
 call plug#begin('~/.vim/bundle')
 Plug 'whatyouhide/vim-gotham'
+Plug 'xero/sourcerer.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
@@ -50,7 +51,7 @@ set nobackup
 
 " custom keymaps
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-nmap <leader><leader> <Plug>(easymotion-s)
+nmap <leader><Space> <Plug>(easymotion-overwin-f)
 nmap <leader>w <C-W>
 nmap <leader>h <<
 vmap <leader>h <
@@ -59,15 +60,18 @@ nmap <leader>l >>
 vmap <leader>l >
 nmap <leader>k <C-U>
 nmap <leader>p "*p
-nmap <leader>P "*P
+nmap <leader>P "+P
 nmap <leader>y "*y
+nmap <leader>Y "+y
 nmap <leader>q :q<CR>
 nmap <leader>rc :tabe ~/.vimrc<CR>
 nmap <leader>rr :source $MYVIMRC<CR>
 nmap <leader>ri :PlugInstall<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
 nnoremap <A-j> :m .+1<CR>==
-vnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 imap jj <Esc>
