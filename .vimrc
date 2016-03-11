@@ -8,6 +8,7 @@ set runtimepath+=$HOME/.vim
 call plug#begin('~/.vim/bundle')
 Plug 'whatyouhide/vim-gotham'
 Plug 'xero/sourcerer.vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
@@ -22,10 +23,21 @@ Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 call plug#end()
 
+" Let lame terminal emulators use alt key bindings
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+set timeout ttimeoutlen=50
+
 " stuff
 set encoding=utf-8
 set fileencodings=utf-8
-set bg="dark"
+set background=dark
+let g:solarized_termcolors=256
 colorscheme gotham256
 set nowrap
 set number
