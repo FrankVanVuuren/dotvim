@@ -9,7 +9,6 @@ call plug#begin('~/.vim/bundle')
 Plug 'whatyouhide/vim-gotham'
 Plug 'xero/sourcerer.vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-sensible'
@@ -21,6 +20,9 @@ Plug 'mattn/emmet-vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
+Plug 'wavded/vim-stylus'
+Plug 'digitaltoad/vim-pug'
+Plug 'kchmck/vim-coffee-script'
 call plug#end()
 
 " Let lame terminal emulators use alt key bindings
@@ -47,12 +49,17 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set softtabstop=2
+set hidden
+set autoread
 set showcmd
 
 " highlight current line
 au WinLeave * set nocursorline
 au WinEnter * set cursorline
 set cursorline
+
+" Don't highlight matching paren
+" NoMatchParen (@fixme doesnt work for some reason)
 
 " space is my leader
 let mapleader = " "
@@ -63,7 +70,6 @@ set nobackup
 
 " custom keymaps
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-nmap <leader><Space> <Plug>(easymotion-overwin-f)
 nmap <leader>w <C-W>
 nmap <leader>h <<
 vmap <leader>h <
@@ -78,8 +84,10 @@ nmap <leader>Y "+y
 nmap <leader>q :q<CR>
 nmap <leader>rc :tabe ~/.vimrc<CR>
 nmap <leader>rr :source $MYVIMRC<CR>
+nmap <leader><space> :CtrlPMixed<CR>
 nmap <leader>ri :PlugInstall<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
+nmap <leader>tr :RainbowToggle<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -94,7 +102,7 @@ map ? <Plug>(incsearch-backward)
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " rainbow configuration
-let g:rainbow_active = 1
+let g:rainbow_active = 0 
 
 " lightline configuration
 let g:lightline = {
