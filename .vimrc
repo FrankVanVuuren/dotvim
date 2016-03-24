@@ -23,6 +23,9 @@ Plug 'luochen1990/rainbow'
 Plug 'wavded/vim-stylus'
 Plug 'digitaltoad/vim-pug'
 Plug 'kchmck/vim-coffee-script'
+Plug 'junegunn/vim-easy-align'
+Plug 'rhysd/open-pdf.vim'
+Plug 'itchyny/screensaver.vim'
 call plug#end()
 
 " Let lame terminal emulators use alt key bindings
@@ -59,7 +62,7 @@ au WinEnter * set cursorline
 set cursorline
 
 " Don't highlight matching paren
-" NoMatchParen (@fixme doesnt work for some reason)
+let loaded_matchparen = 1
 
 " space is my leader
 let mapleader = " "
@@ -88,6 +91,7 @@ nmap <leader><space> :CtrlPMixed<CR>
 nmap <leader>ri :PlugInstall<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
 nmap <leader>tr :RainbowToggle<CR>
+nmap <leader>ts :ScreenSaver largeclock<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -98,11 +102,20 @@ imap jj <Esc>
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap <leader>a <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap <leader>a <Plug>(EasyAlign)
+
 " ctrlp configuration
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " rainbow configuration
 let g:rainbow_active = 0 
+
+" read pdf
+let g:pdf_convert_on_edit = 1
+let g:pdf_convert_on_read = 1
 
 " lightline configuration
 let g:lightline = {
