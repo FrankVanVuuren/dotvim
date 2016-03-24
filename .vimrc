@@ -103,9 +103,9 @@ map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap <leader>a <Plug>(EasyAlign)
+xmap <leader>a <Plug>(LiveEasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap <leader>a <Plug>(EasyAlign)
+nmap <leader>a <Plug>(LiveEasyAlign)
 
 " ctrlp configuration
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
