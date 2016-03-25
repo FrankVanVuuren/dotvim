@@ -1,10 +1,40 @@
+" __     _____ __  __ ____   ____ 
+" \ \   / /_ _|  \/  |  _ \ / ___|
+"  \ \ / / | || |\/| | |_) | |    
+"  _\ V /  | || |  | |  _ <| |___ 
+" (_)\_/  |___|_|  |_|_| \_\\____|
+
+"  _____ ____      _    _   _ _  __ __     ___    _   _ 
+" |  ___|  _ \    / \  | \ | | |/ / \ \   / / \  | \ | |
+" | |_  | |_) |  / _ \ |  \| | ' /   \ \ / / _ \ |  \| |
+" |  _| |  _ <  / ___ \| |\  | . \    \ V / ___ \| |\  |
+" |_|   |_| \_\/_/   \_\_| \_|_|\_\    \_/_/   \_\_| \_|
+"                                                       
+" __     ___   _ _   _ ____  _____ _   _ 
+" \ \   / / | | | | | |  _ \| ____| \ | |
+"  \ \ / /| | | | | | | |_) |  _| |  \| |
+"   \ V / | |_| | |_| |  _ <| |___| |\  |
+"    \_/   \___/ \___/|_| \_\_____|_| \_|
+                                       
 " No backsies
 set nocompatible
+
+" Let lame terminal emulators use alt key bindings
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
 
 " Every Vim on every OS will look in .vim
 set runtimepath+=$HOME/.vim
 
-" Defined plugin location and plugins
+"  ____  _    _   _  ____ ___ _   _ ____  
+" |  _ \| |  | | | |/ ___|_ _| \ | / ___| 
+" | |_) | |  | | | | |  _ | ||  \| \___ \ 
+" |  __/| |__| |_| | |_| || || |\  |___) |
+" |_|   |_____\___/ \____|___|_| \_|____/ 
 call plug#begin('~/.vim/bundle')
 Plug 'whatyouhide/vim-gotham'
 Plug 'xero/sourcerer.vim'
@@ -26,23 +56,18 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'junegunn/vim-easy-align'
 Plug 'rhysd/open-pdf.vim'
 Plug 'itchyny/screensaver.vim'
+Plug 'sgur/ctrlp-extensions.vim'
 call plug#end()
 
-" Let lame terminal emulators use alt key bindings
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-
+"  ____  _____ _____ _____ ___ _   _  ____ ____  
+" / ___|| ____|_   _|_   _|_ _| \ | |/ ___/ ___| 
+" \___ \|  _|   | |   | |  | ||  \| | |  _\___ \ 
+"  ___) | |___  | |   | |  | || |\  | |_| |___) |
+" |____/|_____| |_|   |_| |___|_| \_|\____|____/ 
 set timeout ttimeoutlen=50
-
-" stuff
 set encoding=utf-8
 set fileencodings=utf-8
 set background=dark
-let g:solarized_termcolors=256
 colorscheme gotham256
 set nowrap
 set number
@@ -55,24 +80,21 @@ set softtabstop=2
 set hidden
 set autoread
 set showcmd
-
-" highlight current line
-au WinLeave * set nocursorline
-au WinEnter * set cursorline
 set cursorline
-
-" Don't highlight matching paren
 let loaded_matchparen = 1
-
-" space is my leader
 let mapleader = " "
-
-" FUCK backup files
 set noswapfile
 set nobackup
 
-" custom keymaps
+"  _  _________   ____  __    _    ____  ____  
+" | |/ / ____\ \ / /  \/  |  / \  |  _ \/ ___| 
+" | ' /|  _|  \ V /| |\/| | / _ \ | |_) \___ \ 
+" | . \| |___  | | | |  | |/ ___ \|  __/ ___) |
+" |_|\_\_____| |_| |_|  |_/_/   \_\_|   |____/ 
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+nmap <leader><space> :CtrlP<CR>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>p :CtrlPYankring<CR>
 nmap <leader>w <C-W>
 nmap <leader>h <<
 vmap <leader>h <
@@ -80,14 +102,12 @@ nmap <leader>j <C-D>
 nmap <leader>l >>
 vmap <leader>l >
 nmap <leader>k <C-U>
-nmap <leader>p "*p
 nmap <leader>P "+P
 nmap <leader>y "*y
 nmap <leader>Y "+y
 nmap <leader>q :q<CR>
 nmap <leader>rc :tabe ~/.vimrc<CR>
 nmap <leader>rr :source $MYVIMRC<CR>
-nmap <leader><space> :CtrlPMixed<CR>
 nmap <leader>ri :PlugInstall<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
 nmap <leader>tr :RainbowToggle<CR>
@@ -101,23 +121,17 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 imap jj <Esc>
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap <leader>a <Plug>(LiveEasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap <leader>a <Plug>(LiveEasyAlign)
 
-" ctrlp configuration
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
-" rainbow configuration
+"  ____  _    _   _  ____ ___ _   _    ____ ___  _   _ _____ ___ ____ 
+" |  _ \| |  | | | |/ ___|_ _| \ | |  / ___/ _ \| \ | |  ___|_ _/ ___|
+" | |_) | |  | | | | |  _ | ||  \| | | |  | | | |  \| | |_   | | |  _ 
+" |  __/| |__| |_| | |_| || || |\  | | |__| |_| | |\  |  _|  | | |_| |
+" |_|   |_____\___/ \____|___|_| \_|  \____\___/|_| \_|_|   |___\____|
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor\'
 let g:rainbow_active = 0 
-
-" read pdf
 let g:pdf_convert_on_edit = 1
 let g:pdf_convert_on_read = 1
-
-" lightline configuration
 let g:lightline = {
   \ 'colorscheme': 'gotham256',
   \ 'active': {
@@ -136,10 +150,13 @@ let g:lightline = {
   \ },
   \ }
 
-" gui settings
+"   ____ _   _ ___    ____ ___  _   _ _____ ___ ____ 
+"  / ___| | | |_ _|  / ___/ _ \| \ | |  ___|_ _/ ___|
+" | |  _| | | || |  | |  | | | |  \| | |_   | | |  _ 
+" | |_| | |_| || |  | |__| |_| | |\  |  _|  | | |_| |
+"  \____|\___/|___|  \____\___/|_| \_|_|   |___\____|
 if has('gui_running')
   set guifont=Ubuntu\ Mono
-  
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove tool bar
   set guioptions-=r  "remove right-hand scroll bar
