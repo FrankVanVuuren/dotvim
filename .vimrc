@@ -56,7 +56,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'junegunn/vim-easy-align'
 Plug 'rhysd/open-pdf.vim'
 Plug 'itchyny/screensaver.vim'
-Plug 'sgur/ctrlp-extensions.vim'
+Plug 'vim-scripts/YankRing.vim'
 call plug#end()
 
 "  ____  _____ _____ _____ ___ _   _  ____ ____  
@@ -94,7 +94,7 @@ set nobackup
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 nmap <leader><space> :CtrlP<CR>
 nmap <leader>b :CtrlPBuffer<CR>
-nmap <leader>p :CtrlPYankring<CR>
+nmap <leader>p :YRShow<CR>
 nmap <leader>w <C-W>
 nmap <leader>h <<
 vmap <leader>h <
@@ -103,7 +103,6 @@ nmap <leader>l >>
 vmap <leader>l >
 nmap <leader>k <C-U>
 nmap <leader>P "+P
-nmap <leader>y "*y
 nmap <leader>Y "+y
 nmap <leader>q :q<CR>
 nmap <leader>rc :tabe ~/.vimrc<CR>
