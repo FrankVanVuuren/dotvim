@@ -111,6 +111,7 @@ nmap <leader>ri :PlugInstall<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
 nmap <leader>tr :RainbowToggle<CR>
 nmap <leader>ts :ScreenSaver largeclock<CR>
+nmap <leader>tb :hi Normal ctermbg=none<CR>:hi NonText ctermbg=none<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
