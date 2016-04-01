@@ -155,7 +155,6 @@ let g:lightline = {
 " | |_| | |_| || |  | |__| |_| | |\  |  _|  | | |_| |
 "  \____|\___/|___|  \____\___/|_| \_|_|   |___\____|
 if has('gui_running')
-  set guifont=Ubuntu\ Mono
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove tool bar
   set guioptions-=r  "remove right-hand scroll bar
