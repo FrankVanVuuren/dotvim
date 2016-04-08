@@ -36,6 +36,7 @@ set runtimepath+=$HOME/.vim
 " |  __/| |__| |_| | |_| || || |\  |___) |
 " |_|   |_____\___/ \____|___|_| \_|____/ 
 call plug#begin('~/.vim/bundle')
+Plug 'sheerun/vim-polyglot'
 Plug 'whatyouhide/vim-gotham'
 Plug 'xero/sourcerer.vim'
 Plug 'altercation/vim-colors-solarized'
@@ -58,6 +59,7 @@ Plug 'rhysd/open-pdf.vim'
 Plug 'itchyny/screensaver.vim'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/scratch.vim'
+Plug 'calebsmith/vim-lambdify'
 call plug#end()
 
 "  ____  _____ _____ _____ ___ _   _  ____ ____  
@@ -113,7 +115,6 @@ nmap <leader>ri :PlugInstall<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
 nmap <leader>tr :RainbowToggle<CR>
 nmap <leader>ts :ScreenSaver largeclock<CR>
-nmap <leader>tb :hi Normal ctermbg=none<CR>:hi NonText ctermbg=none<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -134,6 +135,8 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor\'
 let g:rainbow_active = 0 
 let g:pdf_convert_on_edit = 1
 let g:pdf_convert_on_read = 1
+hi Normal ctermbg=none
+hi NonText ctermbg=none
 let g:lightline = {
   \ 'colorscheme': 'gotham256',
   \ 'active': {
@@ -165,3 +168,10 @@ if has('gui_running')
   set guioptions-=L  "remove left-hand scroll bar
   set guioptions-=e  "remove tab-pages
 endif
+
+
+"  _        _    ____  
+" | |      / \  | __ ) 
+" | |     / _ \ |  _ \ 
+" | |___ / ___ \| |_) |
+" |_____/_/   \_\____/ 
