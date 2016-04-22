@@ -88,6 +88,8 @@ let loaded_matchparen = 1
 let mapleader = " "
 set noswapfile
 set nobackup
+set ignorecase
+set smartcase
 
 "  _  _________   ____  __    _    ____  ____  
 " | |/ / ____\ \ / /  \/  |  / \  |  _ \/ ___| 
@@ -126,11 +128,21 @@ map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 xmap <leader>a <Plug>(LiveEasyAlign)
 
+"  ____    _    ____    _   _    _    ____  ____ ___ _____ ____  
+" | __ )  / \  |  _ \  | | | |  / \  | __ )| __ )_ _|_   _/ ___| 
+" |  _ \ / _ \ | | | | | |_| | / _ \ |  _ \|  _ \| |  | | \___ \ 
+" | |_) / ___ \| |_| | |  _  |/ ___ \| |_) | |_) | |  | |  ___) |
+" |____/_/   \_\____/  |_| |_/_/   \_\____/|____/___| |_| |____/ 
+nnoremap I I<Esc>
+nnoremap A A<Esc>
+                                                               
+
 "  ____  _    _   _  ____ ___ _   _    ____ ___  _   _ _____ ___ ____ 
 " |  _ \| |  | | | |/ ___|_ _| \ | |  / ___/ _ \| \ | |  ___|_ _/ ___|
 " | |_) | |  | | | | |  _ | ||  \| | | |  | | | |  \| | |_   | | |  _ 
 " |  __/| |__| |_| | |_| || || |\  | | |__| |_| | |\  |  _|  | | |_| |
 " |_|   |_____\___/ \____|___|_| \_|  \____\___/|_| \_|_|   |___\____|
+let NERDTreeShowHidden=1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor\'
 let g:rainbow_active = 0 
 let g:pdf_convert_on_edit = 1
