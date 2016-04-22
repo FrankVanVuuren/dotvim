@@ -117,6 +117,8 @@ nmap <leader>ri :PlugInstall<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
 nmap <leader>tr :RainbowToggle<CR>
 nmap <leader>ts :ScreenSaver largeclock<CR>
+nmap <leader>sn :silent exec "!spotify-control next"<CR>:redraw!<CR>
+nmap <leader>sp :silent exec "!spotify-control play"<CR>:redraw!<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
