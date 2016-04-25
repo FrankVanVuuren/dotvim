@@ -60,6 +60,7 @@ Plug 'itchyny/screensaver.vim'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/scratch.vim'
 Plug 'calebsmith/vim-lambdify'
+Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
 "  ____  _____ _____ _____ ___ _   _  ____ ____  
