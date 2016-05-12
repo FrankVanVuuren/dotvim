@@ -71,7 +71,6 @@ call plug#end()
 set timeout ttimeoutlen=50
 set encoding=utf-8
 set fileencodings=utf-8
-set background=dark
 colorscheme gotham256
 set nowrap
 set number
@@ -136,7 +135,7 @@ xmap <leader>a <Plug>(LiveEasyAlign)
 " |  _ \ / _ \ | | | | | |_| | / _ \ |  _ \|  _ \| |  | | \___ \ 
 " | |_) / ___ \| |_| | |  _  |/ ___ \| |_) | |_) | |  | |  ___) |
 " |____/_/   \_\____/  |_| |_/_/   \_\____/|____/___| |_| |____/ 
-nnoremap I I<Esc>
+" not at the moment
                                                                
 
 "  ____  _    _   _  ____ ___ _   _    ____ ___  _   _ _____ ___ ____ 
@@ -152,7 +151,7 @@ let g:pdf_convert_on_read = 1
 hi Normal ctermbg=none
 hi NonText ctermbg=none
 let g:lightline = {
-  \ 'colorscheme': 'gotham256',
+  \ 'colorscheme': 'gotham',
   \ 'active': {
   \   'left': [ [ 'mode'],
   \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
