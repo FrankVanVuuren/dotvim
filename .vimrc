@@ -19,14 +19,6 @@
 " No backsies
 set nocompatible
 
-" Let lame terminal emulators use alt key bindings
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-
 " Every Vim on every OS will look in .vim
 set runtimepath+=$HOME/.vim
 
@@ -183,10 +175,3 @@ if has('gui_running')
   set guioptions-=L  "remove left-hand scroll bar
   set guioptions-=e  "remove tab-pages
 endif
-
-
-"  _        _    ____  
-" | |      / \  | __ ) 
-" | |     / _ \ |  _ \ 
-" | |___ / ___ \| |_) |
-" |_____/_/   \_\____/ 
