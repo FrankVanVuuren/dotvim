@@ -59,7 +59,6 @@ Plug 'rhysd/open-pdf.vim'
 Plug 'itchyny/screensaver.vim'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/scratch.vim'
-Plug 'calebsmith/vim-lambdify'
 Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
@@ -81,7 +80,6 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 set hidden
-set autoread
 set showcmd
 set cursorline
 let loaded_matchparen = 1
