@@ -11,11 +11,6 @@
 " |_|   |_| \_\/_/   \_\_| \_|_|\_\    \_/_/   \_\_| \_|    \_/   \___/ \___/|_| \_\_____|_| \_|
 "                                                       
 
-
-
-
-
-                                       
 " No backsies
 set nocompatible
 
@@ -28,18 +23,14 @@ set runtimepath+=$HOME/.vim
 " |  __/| |__| |_| | |_| || || |\  |___) |
 " |_|   |_____\___/ \____|___|_| \_|____/ 
 call plug#begin('~/.vim/bundle')
+Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'whatyouhide/vim-gotham'
-Plug 'xero/sourcerer.vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'mattn/emmet-vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
@@ -50,7 +41,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'rhysd/open-pdf.vim'
 Plug 'itchyny/screensaver.vim'
 Plug 'vim-scripts/YankRing.vim'
-Plug 'vim-scripts/scratch.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
@@ -62,7 +52,7 @@ call plug#end()
 set timeout ttimeoutlen=50
 set encoding=utf-8
 set fileencodings=utf-8
-colorscheme gotham256
+colorscheme gotham
 set nowrap
 set number
 syntax on
@@ -86,7 +76,6 @@ set smartcase
 " | ' /|  _|  \ V /| |\/| | / _ \ | |_) \___ \ 
 " | . \| |___  | | | |  | |/ ___ \|  __/ ___) |
 " |_|\_\_____| |_| |_|  |_/_/   \_\_|   |____/ 
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 nmap <leader><space> :CtrlP<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap va ggvG$
@@ -104,9 +93,9 @@ nmap <leader>q :q<CR>
 nmap <leader>rc :tabe ~/.vimrc<CR>
 nmap <leader>rr :source $MYVIMRC<CR>
 nmap <leader>ri :PlugInstall<CR>
-nmap <leader>tn :NERDTreeToggle<CR>
 nmap <leader>tr :RainbowToggle<CR>
 nmap <leader>ts :ScreenSaver largeclock<CR>
+nmap <leader>tn :NERDTreeToggle<CR>
 nmap <leader>sn :silent exec "!spotify-control next"<CR>:redraw!<CR>
 nmap <leader>sp :silent exec "!spotify-control play"<CR>:redraw!<CR>
 nmap <leader>br :silent exec "!browser-reload"<CR>:redraw!<CR>
@@ -140,8 +129,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor\'
 let g:rainbow_active = 0 
 let g:pdf_convert_on_edit = 1
 let g:pdf_convert_on_read = 1
-hi Normal ctermbg=none
-hi NonText ctermbg=none
 let g:lightline = {
   \ 'colorscheme': 'gotham',
   \ 'active': {
@@ -159,17 +146,3 @@ let g:lightline = {
   \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
   \ },
   \ }
-
-"   ____ _   _ ___    ____ ___  _   _ _____ ___ ____ 
-"  / ___| | | |_ _|  / ___/ _ \| \ | |  ___|_ _/ ___|
-" | |  _| | | || |  | |  | | | |  \| | |_   | | |  _ 
-" | |_| | |_| || |  | |__| |_| | |\  |  _|  | | |_| |
-"  \____|\___/|___|  \____\___/|_| \_|_|   |___\____|
-if has('gui_running')
-  set guioptions-=m  "remove menu bar
-  set guioptions-=T  "remove tool bar
-  set guioptions-=r  "remove right-hand scroll bar
-  set guioptions-=e  "remove tab bar
-  set guioptions-=L  "remove left-hand scroll bar
-  set guioptions-=e  "remove tab-pages
-endif
