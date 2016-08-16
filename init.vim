@@ -1,6 +1,6 @@
 " __     _____ __  __ ____   ____ 
 " \ \   / /_ _|  \/  |  _ \ / ___|
-"  \ \ / / | || |\/| | |_) | |    
+"  \ \ / / | || |\/| | |_) | |   
 "  _\ V /  | || |  | |  _ <| |___ 
 " (_)\_/  |___|_|  |_|_| \_\\____|
 
@@ -11,28 +11,23 @@
 " |_|   |_| \_\/_/   \_\_| \_|_|\_\    \_/_/   \_\_| \_|    \_/   \___/ \___/|_| \_\_____|_| \_|
 "                                                       
 
-" No backsies
-set nocompatible
-
-" Every Vim on every OS will look in .vim
-set runtimepath+=$HOME/.vim
-
 "  ____  _    _   _  ____ ___ _   _ ____  
 " |  _ \| |  | | | |/ ___|_ _| \ | / ___| 
 " | |_) | |  | | | | |  _ | ||  \| \___ \ 
 " |  __/| |__| |_| | |_| || || |\  |___) |
 " |_|   |_____\___/ \____|___|_| \_|____/ 
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.config/nvim/bundle')
+Plug 'w0ng/vim-hybrid'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'whatyouhide/vim-gotham'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'haya14busa/incsearch.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 Plug 'wavded/vim-stylus'
 Plug 'digitaltoad/vim-pug'
@@ -42,6 +37,11 @@ Plug 'rhysd/open-pdf.vim'
 Plug 'itchyny/screensaver.vim'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
+" Plug 'itchyny/lightline.vim'
+" Plug 'cocopon/lightline-hybrid.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'neomake/neomake'
 call plug#end()
 
 "  ____  _____ _____ _____ ___ _   _  ____ ____  
@@ -50,9 +50,7 @@ call plug#end()
 "  ___) | |___  | |   | |  | || |\  | |_| |___) |
 " |____/|_____| |_|   |_| |___|_| \_|\____|____/ 
 set timeout ttimeoutlen=50
-set encoding=utf-8
 set fileencodings=utf-8
-colorscheme gotham
 set nowrap
 set number
 syntax on
@@ -63,19 +61,21 @@ set expandtab
 set softtabstop=2
 set hidden
 set showcmd
-set cursorline
 let loaded_matchparen = 1
 let mapleader = " "
 set noswapfile
 set nobackup
 set ignorecase
 set smartcase
+set background=dark
+colorscheme zellner
 
 "  _  _________   ____  __    _    ____  ____  
 " | |/ / ____\ \ / /  \/  |  / \  |  _ \/ ___| 
 " | ' /|  _|  \ V /| |\/| | / _ \ | |_) \___ \ 
 " | . \| |___  | | | |  | |/ ___ \|  __/ ___) |
 " |_|\_\_____| |_| |_|  |_/_/   \_\_|   |____/ 
+nmap <Esc> <Esc>:nohl<CR>
 nmap <leader><space> :CtrlP<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap va ggvG$
@@ -90,7 +90,7 @@ nmap <leader>k <C-U>
 nmap <leader>P "+P
 nmap <leader>Y "+y
 nmap <leader>q :q<CR>
-nmap <leader>rc :tabe ~/.vimrc<CR>
+nmap <leader>rc :tabe $MYVIMRC<CR>
 nmap <leader>rr :source $MYVIMRC<CR>
 nmap <leader>ri :PlugInstall<CR>
 nmap <leader>tr :RainbowToggle<CR>
@@ -116,7 +116,7 @@ xmap <leader>a <Plug>(LiveEasyAlign)
 " |  _ \ / _ \ | | | | | |_| | / _ \ |  _ \|  _ \| |  | | \___ \ 
 " | |_) / ___ \| |_| | |  _  |/ ___ \| |_) | |_) | |  | |  ___) |
 " |____/_/   \_\____/  |_| |_/_/   \_\____/|____/___| |_| |____/ 
-" not at the moment
+let g:yankring_clipboard_monitor=0
                                                                
 
 "  ____  _    _   _  ____ ___ _   _    ____ ___  _   _ _____ ___ ____ 
@@ -124,25 +124,25 @@ xmap <leader>a <Plug>(LiveEasyAlign)
 " | |_) | |  | | | | |  _ | ||  \| | | |  | | | |  \| | |_   | | |  _ 
 " |  __/| |__| |_| | |_| || || |\  | | |__| |_| | |\  |  _|  | | |_| |
 " |_|   |_____\___/ \____|___|_| \_|  \____\___/|_| \_|_|   |___\____|
+let g:airline_left_sep=' '
+let g:airline_right_sep=' '
+let g:airline#extensions#whitespace#enabled = 0
+let AirlineTheme='wumwum'
+let g:jsx_ext_required = 0
+autocmd! BufWritePost * Neomake
+let g:neomake_open_list=2
+let g:neomake_javascript_enabled_makers = ['standard']
+let g:neomake_jsx_enabled_makers = ['standard']
+let g:neomake_place_signs = 0
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1
 let NERDTreeShowHidden=1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor\'
-let g:rainbow_active = 0 
+let g:rainbow_active = 0
 let g:pdf_convert_on_edit = 1
 let g:pdf_convert_on_read = 1
-let g:lightline = {
-  \ 'colorscheme': 'gotham',
-  \ 'active': {
-  \   'left': [ [ 'mode'],
-  \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-  \ },
-  \ 'component': {
-  \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-  \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-  \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-  \ },
-  \ 'component_visible_condition': {
-  \   'readonly': '(&filetype!="help"&& &readonly)',
-  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-  \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-  \ },
-  \ }
+let g:ctrlp_prompt_mappings = {
+      \ 'AcceptSelection("e")': ['<c-t>'],
+      \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+      \ }
+" let g:lightline.colorscheme = 'default'
