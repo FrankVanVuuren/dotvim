@@ -24,6 +24,7 @@ Plug 'whatyouhide/vim-gotham'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
@@ -37,10 +38,9 @@ Plug 'rhysd/open-pdf.vim'
 Plug 'itchyny/screensaver.vim'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
-" Plug 'itchyny/lightline.vim'
-" Plug 'cocopon/lightline-hybrid.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mattn/emmet-vim'
 Plug 'neomake/neomake'
 call plug#end()
 
@@ -94,6 +94,7 @@ nmap <leader>rc :tabe $MYVIMRC<CR>
 nmap <leader>rr :source $MYVIMRC<CR>
 nmap <leader>ri :PlugInstall<CR>
 nmap <leader>tr :RainbowToggle<CR>
+nmap <leader>tt :setl rnu!<CR> 
 nmap <leader>ts :ScreenSaver largeclock<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
 nmap <leader>sn :silent exec "!spotify-control next"<CR>:redraw!<CR>
@@ -124,10 +125,10 @@ let g:yankring_clipboard_monitor=0
 " | |_) | |  | | | | |  _ | ||  \| | | |  | | | |  \| | |_   | | |  _ 
 " |  __/| |__| |_| | |_| || || |\  | | |__| |_| | |\  |  _|  | | |_| |
 " |_|   |_____\___/ \____|___|_| \_|  \____\___/|_| \_|_|   |___\____|
-let g:airline_left_sep=' '
-let g:airline_right_sep=' '
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 let g:airline#extensions#whitespace#enabled = 0
-let AirlineTheme='wumwum'
+let AirlineTheme='term'
 let g:jsx_ext_required = 0
 autocmd! BufWritePost * Neomake
 let g:neomake_open_list=2
@@ -141,8 +142,3 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor\'
 let g:rainbow_active = 0
 let g:pdf_convert_on_edit = 1
 let g:pdf_convert_on_read = 1
-let g:ctrlp_prompt_mappings = {
-      \ 'AcceptSelection("e")': ['<c-t>'],
-      \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-      \ }
-" let g:lightline.colorscheme = 'default'
