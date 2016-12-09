@@ -78,6 +78,7 @@ colorscheme zellner
 nmap <Esc> <Esc>:nohl<CR>
 nmap <leader><space> :CtrlP<CR>
 nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>z %
 nmap va ggvG$
 nmap <leader>p :YRShow<CR>
 nmap <leader>w <C-W>
