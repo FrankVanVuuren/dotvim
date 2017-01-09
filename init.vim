@@ -129,7 +129,7 @@ let g:yankring_clipboard_monitor=0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#whitespace#enabled = 0
-let AirlineTheme='term'
+let g:airline_theme='term'
 let g:jsx_ext_required = 0
 autocmd! BufWritePost * Neomake
 let g:neomake_open_list=2
