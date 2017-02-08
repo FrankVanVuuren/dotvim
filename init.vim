@@ -119,6 +119,7 @@ xmap <leader>a <Plug>(LiveEasyAlign)
 " | |_) / ___ \| |_| | |  _  |/ ___ \| |_) | |_) | |  | |  ___) |
 " |____/_/   \_\____/  |_| |_/_/   \_\____/|____/___| |_| |____/ 
 let g:yankring_clipboard_monitor=0
+let g:yankring_history_file='.yk_history'
                                                                
 
 "  ____  _    _   _  ____ ___ _   _    ____ ___  _   _ _____ ___ ____ 
