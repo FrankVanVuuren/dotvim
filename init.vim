@@ -30,6 +30,7 @@ Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'luochen1990/rainbow'
+Plug 'chrisbra/csv.vim'
 Plug 'wavded/vim-stylus'
 Plug 'digitaltoad/vim-pug'
 Plug 'kchmck/vim-coffee-script'
@@ -41,6 +42,7 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim'
+Plug 'posva/vim-vue'
 Plug 'neomake/neomake'
 call plug#end()
 
@@ -112,6 +114,7 @@ imap jj <Esc>
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 xmap <leader>a <Plug>(LiveEasyAlign)
+cmap w!! w !sudo tee > /dev/null %
 
 "  ____    _    ____    _   _    _    ____  ____ ___ _____ ____  
 " | __ )  / \  |  _ \  | | | |  / \  | __ )| __ )_ _|_   _/ ___| 
