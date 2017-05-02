@@ -65,11 +65,13 @@ set hidden
 set showcmd
 let loaded_matchparen = 1
 let mapleader = " "
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
 set noswapfile
 set nobackup
 set ignorecase
 set smartcase
 set background=dark
+set mouse=a
 colorscheme zellner
 
 "  _  _________   ____  __    _    ____  ____  
