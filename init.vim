@@ -16,6 +16,7 @@
 " | |_) | |  | | | | |  _ | ||  \| \___ \ 
 " |  __/| |__| |_| | |_| || || |\  |___) |
 " |_|   |_____\___/ \____|___|_| \_|____/ 
+
 call plug#begin('~/.config/nvim/bundle')
 Plug 'w0ng/vim-hybrid'
 Plug 'scrooloose/nerdtree'
@@ -106,6 +107,7 @@ nmap <leader>sn :silent exec "!spotify-control next"<CR>:redraw!<CR>
 nmap <leader>sp :silent exec "!spotify-control play"<CR>:redraw!<CR>
 nmap <leader>br :silent exec "!browser-reload"<CR>:redraw!<CR>
 nmap <leader>ww :w<CR><space>br
+nmap <leader>g :Gstatus<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -113,6 +115,7 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 imap jj <Esc>
+tnoremap <Esc> <C-\><C-n> 
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 xmap <leader>a <Plug>(LiveEasyAlign)
@@ -125,7 +128,6 @@ cmap w!! w !sudo tee > /dev/null %
 " |____/_/   \_\____/  |_| |_/_/   \_\____/|____/___| |_| |____/ 
 let g:yankring_clipboard_monitor=0
 let g:yankring_history_file='.yk_history'
-                                                               
 
 "  ____  _    _   _  ____ ___ _   _    ____ ___  _   _ _____ ___ ____ 
 " |  _ \| |  | | | |/ ___|_ _| \ | |  / ___/ _ \| \ | |  ___|_ _/ ___|
@@ -139,13 +141,22 @@ let g:airline_theme='term'
 let g:jsx_ext_required = 0
 autocmd! BufWritePost * Neomake
 let g:neomake_open_list=2
-let g:neomake_javascript_enabled_makers = ['standard']
-let g:neomake_jsx_enabled_makers = ['standard']
 let g:neomake_place_signs = 0
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1
+"let g:hybrid_custom_term_colors = 1
+"let g:hybrid_reduced_contrast = 1
 let NERDTreeShowHidden=1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor\'
+let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git\'
 let g:rainbow_active = 0
 let g:pdf_convert_on_edit = 1
 let g:pdf_convert_on_read = 1
+
+
+" Set split separator to Unicode box drawing character
+set encoding=utf8
+set fillchars=vert:│
+
+" Override color scheme to make split the same color as tmux's default
+highlight Vertsplit ctermfg=black
+
+set laststatus=0
+"au VimEnter * AirlineToggle
