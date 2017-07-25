@@ -108,7 +108,7 @@ nmap <leader>sp :silent exec "!spotify-control play"<CR>:redraw!<CR>
 nmap <leader>br :silent exec "!browser-reload"<CR>:redraw!<CR>
 nmap <leader>ww :w<CR><space>br
 nmap <leader>gs :Gstatus<CR>
-nmap <leader>gh :Gstatus<CR>
+nmap <leader>gh :Gbrowse<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
