@@ -48,6 +48,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim'
 Plug 'posva/vim-vue'
 Plug 'neomake/neomake'
+Plug 'mhinz/vim-mix-format'
+Plug 'slashmili/alchemist.vim'
+Plug 'ElmCast/elm-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'easymotion/vim-easymotion'
+
+
 call plug#end()
 
 "  ____  _____ _____ _____ ___ _   _  ____ ____  
@@ -69,7 +76,6 @@ set hidden
 set showcmd
 let loaded_matchparen = 1
 let mapleader = " "
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
 set noswapfile
 set nobackup
 set ignorecase
@@ -84,17 +90,15 @@ colorscheme zellner
 " | . \| |___  | | | |  | |/ ___ \|  __/ ___) |
 " |_|\_\_____| |_| |_|  |_/_/   \_\_|   |____/ 
 nmap <Esc> <Esc>:nohl<CR>
-nmap <leader><space> :CtrlP<CR>
+nmap <leader><leader> :CtrlP<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>z %
 nmap va ggvG$
 nmap <leader>p :YRShow<CR>
 nmap <leader>w <C-W>
 nmap <leader>h <<
-vmap <leader>h <
 nmap <leader>j <C-D>
 nmap <leader>l >>
-vmap <leader>l >
 nmap <leader>k <C-U>
 nmap <leader>P "+P
 nmap <leader>Y "+y
@@ -106,10 +110,7 @@ nmap <leader>tr :RainbowToggle<CR>
 nmap <leader>tt :setl rnu!<CR> 
 nmap <leader>ts :ScreenSaver largeclock<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
-nmap <leader>sn :silent exec "!spotify-control next"<CR>:redraw!<CR>
-nmap <leader>sp :silent exec "!spotify-control play"<CR>:redraw!<CR>
-nmap <leader>br :silent exec "!browser-reload"<CR>:redraw!<CR>
-nmap <leader>ww :w<CR><space>br
+nmap <leader>s <Plug>(easymotion-overwin-w)
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gh :Gbrowse<CR>
 nnoremap <A-j> :m .+1<CR>==
@@ -138,6 +139,7 @@ let g:yankring_history_file='.yk_history'
 " | |_) | |  | | | | |  _ | ||  \| | | |  | | | |  \| | |_   | | |  _ 
 " |  __/| |__| |_| | |_| || || |\  | | |__| |_| | |\  |  _|  | | |_| |
 " |_|   |_____\___/ \____|___|_| \_|  \____\___/|_| \_|_|   |___\____|
+let g:EasyMotion_do_mapping = 0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#whitespace#enabled = 0
@@ -146,13 +148,16 @@ let g:jsx_ext_required = 0
 autocmd! BufWritePost * Neomake
 let g:neomake_open_list=2
 let g:neomake_place_signs = 0
+let g:mix_format_on_save = 1
 "let g:hybrid_custom_term_colors = 1
 "let g:hybrid_reduced_contrast = 1
 let NERDTreeShowHidden=1
-let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git\'
+" let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git\'
+ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git\'
 let g:rainbow_active = 0
 let g:pdf_convert_on_edit = 1
 let g:pdf_convert_on_read = 1
+let g:elm_setup_keybindings = 0
 
 
 " Set split separator to Unicode box drawing character
