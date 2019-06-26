@@ -18,6 +18,7 @@
 " |_|   |_____\___/ \____|___|_| \_|____/ 
 
 " Feel free to share. Share to be free
+" ok
 
 call plug#begin('~/.config/nvim/bundle')
 Plug 'w0ng/vim-hybrid'
