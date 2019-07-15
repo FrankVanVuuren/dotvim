@@ -20,15 +20,15 @@
 " Feel free to share. Share to be free
 
 call plug#begin('~/.config/nvim/bundle')
-Plug 'w0ng/vim-hybrid'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neomake/neomake'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
-Plug 'whatyouhide/vim-gotham'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
@@ -37,24 +37,12 @@ Plug 'luochen1990/rainbow'
 Plug 'chrisbra/csv.vim'
 Plug 'wavded/vim-stylus'
 Plug 'digitaltoad/vim-pug'
-Plug 'kchmck/vim-coffee-script'
 Plug 'junegunn/vim-easy-align'
 Plug 'rhysd/open-pdf.vim'
-Plug 'itchyny/screensaver.vim'
-Plug 'vim-scripts/YankRing.vim'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim'
-Plug 'posva/vim-vue'
-Plug 'neomake/neomake'
 Plug 'mhinz/vim-mix-format'
-Plug 'slashmili/alchemist.vim'
-Plug 'ElmCast/elm-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'easymotion/vim-easymotion'
-
-
 call plug#end()
 
 "  ____  _____ _____ _____ ___ _   _  ____ ____  
@@ -83,6 +71,7 @@ set smartcase
 set background=dark
 set mouse=a
 colorscheme zellner
+set laststatus=0
 
 "  _  _________   ____  __    _    ____  ____  
 " | |/ / ____\ \ / /  \/  |  / \  |  _ \/ ___| 
@@ -90,7 +79,7 @@ colorscheme zellner
 " | . \| |___  | | | |  | |/ ___ \|  __/ ___) |
 " |_|\_\_____| |_| |_|  |_/_/   \_\_|   |____/ 
 nmap <Esc> <Esc>:nohl<CR>
-nmap <leader><leader> :CtrlP<CR>
+nmap <leader> <leader> :CtrlP<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>z %
 nmap va ggvG$
@@ -106,9 +95,8 @@ nmap <leader>q :q<CR>
 nmap <leader>rc :tabe $MYVIMRC<CR>
 nmap <leader>rr :source $MYVIMRC<CR>
 nmap <leader>ri :PlugInstall<CR>
-nmap <leader>tr :RainbowToggle<CR>
+ map <leader>tr :RainbowToggle<CR>
 nmap <leader>tt :setl rnu!<CR> 
-nmap <leader>ts :ScreenSaver largeclock<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
 nmap <leader>s <Plug>(easymotion-overwin-w)
 nmap <leader>gs :Gstatus<CR>
@@ -131,41 +119,21 @@ cmap w!! w !sudo tee > /dev/null %
 " |  _ \ / _ \ | | | | | |_| | / _ \ |  _ \|  _ \| |  | | \___ \ 
 " | |_) / ___ \| |_| | |  _  |/ ___ \| |_) | |_) | |  | |  ___) |
 " |____/_/   \_\____/  |_| |_/_/   \_\____/|____/___| |_| |____/ 
-let g:yankring_clipboard_monitor=0
-let g:yankring_history_file='.yk_history'
 
 "  ____  _    _   _  ____ ___ _   _    ____ ___  _   _ _____ ___ ____ 
 " |  _ \| |  | | | |/ ___|_ _| \ | |  / ___/ _ \| \ | |  ___|_ _/ ___|
 " | |_) | |  | | | | |  _ | ||  \| | | |  | | | |  \| | |_   | | |  _ 
 " |  __/| |__| |_| | |_| || || |\  | | |__| |_| | |\  |  _|  | | |_| |
 " |_|   |_____\___/ \____|___|_| \_|  \____\___/|_| \_|_|   |___\____|
-let g:EasyMotion_do_mapping = 0
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline_theme='term'
+let g:airline_theme='base16'
+augroup localneomake
+  autocmd! BufWritePost * Neomake
+augroup END
+let g:neomake_markdown_enabled_makers = []
 let g:jsx_ext_required = 0
-autocmd! BufWritePost * Neomake
-let g:neomake_open_list=2
-let g:neomake_place_signs = 0
 let g:mix_format_on_save = 1
-"let g:hybrid_custom_term_colors = 1
-"let g:hybrid_reduced_contrast = 1
 let NERDTreeShowHidden=1
-" let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|\.git\'
- let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git\'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git\'
 let g:rainbow_active = 0
 let g:pdf_convert_on_edit = 1
 let g:pdf_convert_on_read = 1
-let g:elm_setup_keybindings = 0
-
-
-" Set split separator to Unicode box drawing character
-set encoding=utf8
-set fillchars=vert:│
-
-" Override color scheme to make split the same color as tmux's default
-highlight Vertsplit ctermfg=black
-
-set laststatus=0
-"au VimEnter * AirlineToggle
