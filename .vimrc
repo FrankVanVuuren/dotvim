@@ -28,6 +28,7 @@ Plug 'xolox/vim-misc'
 Plug 'airblade/vim-gitgutter'
 Plug 'elixir-editors/vim-elixir'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'josa42/vim-lightline-coc'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
@@ -156,15 +157,15 @@ let g:rainbow_active = 0
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
-
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ],
+      \             [ 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'coc_status'  ]]
       \ },
       \ 'component_function': {
-      \   'cocstatus': 'coc#status',
-      \   'currentfunction': 'CocCurrentFunction'
+      \   'gitbranch': 'fugitive#head'
       \ },
       \ }
+call lightline#coc#register()
