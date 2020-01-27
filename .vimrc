@@ -17,14 +17,6 @@ set nocompatible
 " Every Vim on every OS will look in .vim
 set runtimepath+=$HOME/.vim
 
-" LoL Im A fUcKiNg EsCaPe ChArAcTeR
-" wHicH MaKe UsInG ThE MeTa-KeY HaRd
-for i in range(97,122)
-  let c = nr2char(i)
-  exec "map \e".c." <M-".c.">"
-  exec "map! \e".c." <M-".c.">"
-endfor
-
 "  ____  _    _   _  ____ ___ _   _ ____  
 " |  _ \| |  | | | |/ ___|_ _| \ | / ___| 
 " | |_) | |  | | | | |  _ | ||  \| \___ \ 
@@ -40,6 +32,7 @@ Plug 'josa42/vim-lightline-coc'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
+Plug 'andys8/vim-elm-syntax'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
@@ -48,6 +41,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 Plug 'wavded/vim-stylus'
 Plug 'junegunn/vim-easy-align'
+Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "  ____  _____ _____ _____ ___ _   _  ____ ____  
@@ -118,14 +113,6 @@ nmap <leader>ri :PlugInstall<CR>
 " toggles
 nmap <leader>tr :RainbowToggle<CR>
 nmap <leader>tn :NERDTreeToggle<CR>
-
-" move lines
-nnoremap <M-j> :m .+1<CR>==
-nnoremap <M-k> :m .-2<CR>==
-inoremap <M-j> <Esc>:m .+1<CR>==gi
-inoremap <M-k> <Esc>:m .-2<CR>==gi
-vnoremap <M-j> :m '>+1<CR>gv=gv
-vnoremap <M-k> :m '<-2<CR>gv=gv
 
 " additinal escape
 imap jj <Esc>
