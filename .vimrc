@@ -35,7 +35,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'andys8/vim-elm-syntax'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'kien/ctrlp.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
@@ -43,6 +42,7 @@ Plug 'wavded/vim-stylus'
 Plug 'junegunn/vim-easy-align'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 "  ____  _____ _____ _____ ___ _   _  ____ ____  
@@ -81,9 +81,9 @@ set smartcase
 " | . \| |___  | | | |  | |/ ___ \|  __/ ___) |
 " |_|\_\_____| |_| |_|  |_/_/   \_\_|   |____/ 
 
-" CtrlP files and buffer
-nmap <leader><space> :CtrlP<CR>
-nmap <leader>b :CtrlPBuffer<CR>
+" FZF files and buffer
+nmap <leader><space> :Files<CR>
+nmap <leader>b :Buffers<CR>
 
 " select all
 nmap va ggvG$
@@ -146,8 +146,10 @@ nmap <silent> gr <Plug>(coc-references)
 " |  __/| |__| |_| | |_| || || |\  | | |__| |_| | |\  |  _|  | | |_| |
 " |_|   |_____\___/ \____|___|_| \_|  \____\___/|_| \_|_|   |___\____|
 let NERDTreeShowHidden=1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendor\|.elixir_ls\|_build\|deps\|doc'
 let g:rainbow_active = 0 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
