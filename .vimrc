@@ -28,7 +28,6 @@ Plug 'xolox/vim-misc'
 Plug 'airblade/vim-gitgutter'
 Plug 'elixir-editors/vim-elixir'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'josa42/vim-lightline-coc'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
@@ -36,11 +35,10 @@ Plug 'andys8/vim-elm-syntax'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'haya14busa/incsearch.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 Plug 'wavded/vim-stylus'
 Plug 'junegunn/vim-easy-align'
-Plug '/usr/bin/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 call plug#end()
@@ -154,15 +152,3 @@ let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ],
-      \             [ 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'coc_status'  ]]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
-call lightline#coc#register()
