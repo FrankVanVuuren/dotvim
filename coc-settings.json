@@ -1,5 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["elm"],
+  "coc.preferences.formatOnSaveFiletypes": ["elm", "elixir"],
   "languageserver": {
     "elmLS": {
       "command": "elm-language-server",
